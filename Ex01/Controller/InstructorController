@@ -1,0 +1,20 @@
+package com.example.session03.Controller;
+
+import com.example.session03.Models.Services.InstructorService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/v3/instructor")
+public class InstructorController {
+    private final InstructorService instructorService;
+    @GetMapping
+    public ResponseEntity<?> findAll() {
+        return ResponseEntity.status(HttpStatus.OK).body(instructorService.findAll());
+    }
+}
