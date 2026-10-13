@@ -1,0 +1,17 @@
+package com.example.session03.Models.Services;
+
+import com.example.session03.Models.Entities.Enrollment;
+import com.example.session03.Models.Repositories.EnrollmentRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@Service
+public class EnrollmentService {
+    private final EnrollmentRepository enrollmentRepository;
+    public List<Enrollment> findAll() {
+        return enrollmentRepository.findAll();
+    }
+}
